@@ -104,3 +104,17 @@ resource "google_compute_firewall" "cf-tcp" {
 
   target_tags = ["${var.prefix}-cf-tcp-lb"]
 }
+
+//// Allow access to PKS UAA and API port
+resource "google_compute_firewall" "pks-allow-uaa-api" {
+  name       = "${var.prefix}-allow-uaa-api"
+  depends_on = ["google_compute_network.pcf-virt-net"]
+  network    = "${google_compute_network.pcf-virt-net.name}"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["8443,9021"]
+  }
+
+  target_tags = ["${var.prefix}-pks-api", "master"]
+}
