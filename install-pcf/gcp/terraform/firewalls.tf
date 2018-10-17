@@ -116,5 +116,5 @@ resource "google_compute_firewall" "pks-allow-uaa-api" {
     ports    = ["8443","9021"]
   }
 
-  target_tags = ["${var.prefix}-pks-api", "master"]
+  target_tags = ["${var.prefix}-pks-api", "pivotal-container-service", "master"]
 }
