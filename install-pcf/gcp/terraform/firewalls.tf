@@ -113,7 +113,7 @@ resource "google_compute_firewall" "pks-allow-uaa-api" {
 
   allow {
     protocol = "tcp"
-    ports    = ["8443,9021"]
+    ports    = ["8443","9021"]
   }
 
   target_tags = ["${var.prefix}-pks-api", "master"]
