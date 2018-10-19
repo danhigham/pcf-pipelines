@@ -52,7 +52,7 @@ network_configuration=$(
     --arg dynamic_services_vcenter_network "${GCP_RESOURCE_PREFIX}-virt-net/${GCP_RESOURCE_PREFIX}-subnet-dynamic-services-1-${GCP_REGION}/${GCP_REGION}" \
     --arg dynamic_services_network_cidr "192.168.24.0/22" \
     --arg dynamic_services_reserved_ip_ranges "192.168.24.1-192.168.24.9" \
-    --arg dynamic_services_dns "192.168.24.1,8.8.8.8" \
+    --arg dynamic_services_dns "192.168.24.1" \
     --arg dynamic_services_gateway "192.168.24.1" \
     --arg dynamic_services_availability_zones "$availability_zones" \
     '
